@@ -1,0 +1,6 @@
+---
+- name: Initialize Kubernetes master
+  hosts: masters
+  become: true
+  roles:
+    - kubeadm

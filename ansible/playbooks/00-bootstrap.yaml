@@ -1,0 +1,7 @@
+---
+- name: Bootstrap Debian nodes for Kubernetes
+  hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - common

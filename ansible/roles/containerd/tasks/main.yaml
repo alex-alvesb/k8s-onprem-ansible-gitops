@@ -1,0 +1,29 @@
+---
+- name: Install containerd
+  apt:
+    name: containerd
+    state: present
+    update_cache: yes
+
+- name: Create containerd config directory
+  file:
+    path: /etc/containerd
+    state: directory
+    mode: '0755'
+
+- name: Generate default containerd config
+  command: containerd config default
+  register: containerd_default_config
+  changed_when: false
+
+- name: Configure containerd with systemd cgroup
+  copy:
+    dest: "{{ containerd_config_path }}"
+    content: |
+      {{ containerd_default_config.stdout | regex_replace('SystemdCgroup = false', 'SystemdCgroup = true') }}
+
+- name: Enable and start containerd
+  systemd:
+    name: containerd
+    enabled: yes
+    state: restarted

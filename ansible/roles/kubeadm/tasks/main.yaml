@@ -1,0 +1,9 @@
+---
+- import_tasks: init-master.yaml
+  when: inventory_hostname in groups['masters']
+
+- import_tasks: cni.yaml
+  when: inventory_hostname in groups['masters']
+
+- import_tasks: join-workers.yaml
+  when: inventory_hostname in groups['workers']

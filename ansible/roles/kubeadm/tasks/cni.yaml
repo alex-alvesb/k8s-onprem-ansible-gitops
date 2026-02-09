@@ -1,0 +1,10 @@
+---
+- name: Install Calico CNI
+  become_user: administrator
+  environment:
+    KUBECONFIG: /home/administrator/.kube/config
+  command: >
+    kubectl apply -f
+    https://raw.githubusercontent.com/projectcalico/calico/v3.27.2/manifests/calico.yaml
+  args:
+    creates: /etc/cni/net.d/calico-kubeconfig

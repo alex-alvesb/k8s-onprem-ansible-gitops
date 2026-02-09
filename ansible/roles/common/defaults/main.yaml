@@ -1,0 +1,11 @@
+---
+common_packages:
+  - curl
+  - vim
+  - nano
+  - ca-certificates
+  - apt-transport-https
+  - gnupg
+  - lsb-release
+  - net-tools
+  - sudo
