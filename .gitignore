@@ -1,0 +1,70 @@
+##################################
+# Sistema Operacional / Editor
+##################################
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea/
+.vscode/
+
+##################################
+# Ansible
+##################################
+*.retry
+ansible.log
+.env
+.env.*
+inventory/*.secret
+inventory/*.vault
+inventory/*_private.ini
+
+##################################
+# Kubernetes / Manifests
+##################################
+*.orig
+*.old
+*.backup
+
+##################################
+# Credenciais / Sensíveis
+##################################
+*.pem
+*.key
+*.crt
+*.csr
+id_rsa
+id_rsa.pub
+*.kubeconfig
+kubeconfig
+.kube/
+
+##################################
+# Terraform / OpenTofu (caso exista)
+##################################
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.crash.log
+
+##################################
+# Logs e Artefatos
+##################################
+logs/
+*.log
+
+##################################
+# Scripts locais / testes
+##################################
+scripts/local/
+scripts/tmp/
+
+##################################
+# Arquivos gerados localmente
+##################################
+screenshots/raw/
+diagrams/tmp/
